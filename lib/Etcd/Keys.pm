@@ -296,6 +296,8 @@ This invokes the C<POST> method for the given key.
 
 C<watch>
 
+    $etcd->watch("/message");
+
 Block until the given key changes, then return the change.
 
 This invokes the C<GET> method for the given key with the C<wait> query

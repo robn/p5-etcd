@@ -41,7 +41,7 @@ Etcd::Stats - etcd stats API
     
     my $leader_stats = $etcd->stats("leader");
     
-    my $store_stats = $etcd->stats("leader");
+    my $store_stats = $etcd->stats("store");
     
     my $self_stats = $etcd->stats("self");
 
@@ -59,7 +59,7 @@ C<stats>
 
     my $leader_stats = $etcd->stats("leader");
 
-    my $store_stats = $etcd->stats("leader");
+    my $store_stats = $etcd->stats("store");
 
     my $self_stats = $etcd->stats("self");
 

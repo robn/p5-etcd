@@ -147,7 +147,7 @@ L<Etcd::Keys> - Key space API
 
 =item *
 
-L<Etcd::Keys> - Stats API
+L<Etcd::Stats> - Stats API
 
 =back
 
