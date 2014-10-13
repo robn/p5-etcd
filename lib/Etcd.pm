@@ -40,6 +40,8 @@ sub _prep_url {
 sub api_exec {
     my ($self, $path, $method, %args) = @_;
     my $res = $self->http->request($method, $self->_prep_url($path, %args));
+    $res = $self->http->request($method, $res->{headers}->{location})
+        if $res && $res->{status} eq 307;
     return $res if $res->{success};
     croak "$res->{status} $res->{reason}: $res->{content}" if $res->{status} >= 500;
     require Etcd::Error;
