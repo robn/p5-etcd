@@ -196,6 +196,10 @@ L<https://github.com/robn/p5-etcd>
 
 Robert Norris <rob@eatenbyagrue.org>
 
+=item *
+
+Matt Harrington
+
 =back
 
 =head1 COPYRIGHT AND LICENSE
