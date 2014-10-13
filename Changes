@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+0.002     2014-10-14 10:00:41+11:00 Australia/Melbourne
  - Minor doc fixes
  - Handle all redirects to leader nodes
  - More tests
