@@ -23,7 +23,7 @@ has created_index  => ( is => 'ro', isa => Int, init_arg => 'createdIndex'  );
 has modified_index => ( is => 'ro', isa => Int, init_arg => 'modifiedIndex' );
 has ttl            => ( is => 'ro', isa => Int );
 has expiration     => ( is => 'ro', isa => $ISO8601 );
-has dir            => ( is => 'ro', isa => Bool );
+has dir            => ( is => 'ro', isa => Bool, coerce => sub { !! $_[0] } );
 
 has nodes => (
     is => 'ro',
