@@ -4,7 +4,7 @@ package Etcd;
 
 use namespace::sweep;
 
-use HTTP::Tiny;
+use HTTP::Tiny 0.014;
 use URI::Escape qw(uri_escape);
 use Carp qw(croak);
 
