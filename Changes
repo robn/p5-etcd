@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+0.003     2014-10-21 08:17:12+11:00 Australia/Melbourne
  - handle JSON::XS booleans when creating response objects
  - explicitly require HTTP::Tiny >= 0.014
 
