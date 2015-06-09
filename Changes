@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+0.004     2015-06-10 08:08:08+10:00 Australia/Melbourne
  - use namespace::autoclean instead of namespace::sweep (#5)
 
 0.003     2014-10-21 08:17:12+11:00 Australia/Melbourne
