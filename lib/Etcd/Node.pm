@@ -1,6 +1,6 @@
 package Etcd::Node;
 
-use namespace::sweep;
+use namespace::autoclean;
 
 use Moo;
 use Type::Tiny;

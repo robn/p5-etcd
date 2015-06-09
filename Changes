@@ -1,4 +1,5 @@
 {{$NEXT}}
+ - use namespace::autoclean instead of namespace::sweep (#5)
 
 0.003     2014-10-21 08:17:12+11:00 Australia/Melbourne
  - handle JSON::XS booleans when creating response objects

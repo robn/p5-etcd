@@ -1,6 +1,6 @@
 package Etcd::Stats;
 
-use namespace::sweep;
+use namespace::autoclean;
 
 use JSON qw(decode_json);
 use Carp qw(croak);

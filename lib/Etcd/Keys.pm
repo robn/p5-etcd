@@ -1,6 +1,6 @@
 package Etcd::Keys;
 
-use namespace::sweep;
+use namespace::autoclean;
 
 use Etcd::Response;
 use Try::Tiny;

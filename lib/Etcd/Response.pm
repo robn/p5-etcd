@@ -1,6 +1,6 @@
 package Etcd::Response;
 
-use namespace::sweep;
+use namespace::autoclean;
 
 use Etcd::Node;
 
