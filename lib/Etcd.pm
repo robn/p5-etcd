@@ -29,17 +29,38 @@ sub _build__url_base {
 }
 
 sub _prep_url {
-    my ($self, $path, %args) = @_;
+    my ($self, $method, $path, %args) = @_;
     my $trailing = $path =~ m{/$};
     my $url = $self->_url_base.join('/', map { uri_escape($_) } split('/', $path));
     $url .= '/' if $trailing;
+    delete($args{value}) if (uc($method) eq 'PUT');
     $url .= '?'.$self->http->www_form_urlencode(\%args) if %args;
     $url;
 }
 
 sub api_exec {
     my ($self, $path, $method, %args) = @_;
-    my $res = $self->http->request($method, $self->_prep_url($path, %args));
+
+    my $urlencoded;
+
+    $urlencoded = $self->http->www_form_urlencode({ value => $args{value} })
+                    if (uc($method) eq 'PUT');
+
+    my $res = $self->http->request(
+                $method,
+                $self->_prep_url($method, $path, %args),
+                (uc($method) eq 'PUT'
+                  ? {
+                      headers => {
+                        'content-length' => length($urlencoded),
+                        'content-type'   => 'application/x-www-form-urlencoded',
+                        'expect'         => '100-continue',
+                      },
+                      content => $urlencoded
+                    }
+                  : {})
+            );
+
     $res = $self->http->request($method, $res->{headers}->{location})
         if $res && $res->{status} eq 307;
     return $res if $res->{success};
